@@ -116,7 +116,7 @@ npm install
 Create `.env` in `frontend/`:
 
 ```env
-VITE_BACKEND_URL=http://localhost:5000
+VITE_BACKEND_URL=https://xeno-crm-backend-534j.onrender.com
 ```
 
 Start the frontend:
@@ -176,11 +176,11 @@ xeno-crm/                          # Root directory
 
 ```json
 {
-  "_id": "ObjectId",
-  "name": "String",
-  "rules": [{ "field": String, "operator": String, "value": Any }],
-  "logic": "AND" | "OR",
-  "userId": "ObjectId"
+  _id: "ObjectId",
+  name: "String",
+  rules: [{ field: String, operator: String, value: Any }],
+  logic: "AND" || "OR",
+  userId: "ObjectId"
 }
 ```
 
@@ -199,21 +199,24 @@ xeno-crm/                          # Root directory
 ## 🧭 Architecture Flow
 
 ```
-[Google Login]
-        ↓
-[Create Customers / Orders]
-        ↓
-[Define Segment Rules via UI or AI]
-        ↓
-[Preview Customers in Segment]
-        ↓
-[Launch Campaign to Segment]
-        ↓
-[Message Sent via Dummy Vendor]
-        ↓
-[Vendor hits /delivery-receipt]
-        ↓
-[Update Communication Log & Analytics]
+[User Logs in with Google (OAuth2)]
+           ↓
+[User Dashboard Loaded]
+           ↓
+[Customer Explorer]
+   └── View or Add Customers (manual entry or via API)
+           ↓
+[Create Segment]
+   └── AI Segment (Gemini API) or Manual Rules
+           ↓
+[Segment Preview & Save]
+           ↓
+[Launch Campaign]
+   └── Select Segment + Enter Message
+           ↓
+[Store Campaign to DB]
+           ↓
+[Update Campaign History + Analytics Dashboard]
 ```
 ## 🧪 Testing
 
@@ -229,7 +232,9 @@ Tests are not yet implemented but are crucial for reliability. Recommended tools
 | Backend  | Render   | https://xeno-crm-backend.onrender.com                                          |
 | Database | MongoDB  | MongoDB Atlas                                                                   |
 
-> Vercel provides seamless deployment for React frontend. Render hosts the Node.js backend. MongoDB Atlas ensures secure and scalable data handling.
+> Vercel provides seamless deployment for React frontend. 
+Render hosts the Node.js backend. 
+MongoDB Atlas ensures secure and scalable data handling.
 ## 🤝 Contributing
 
 1. Fork the repo  
@@ -253,9 +258,7 @@ Tests are not yet implemented but are crucial for reliability. Recommended tools
 - No role-based access control (RBAC); all authenticated users have the same privileges.
 - Tests are not yet implemented for backend or frontend.
 - User and customer data separation assumes unique Google accounts.
-## 📄 License
 
-Distributed under the **MIT License**. See the `LICENSE` file for more information.
 ## 📬 Contact
 
 **Bhawna** — [bbhawna3016@gmail.com](mailto:bbhawna3016@gmail.com)  
@@ -273,4 +276,4 @@ Project: [github.com/BBISHT1998/xeno-crm](https://github.com/BBISHT1998/xeno-crm
 
 🛠️ Created with ❤️ by **BBISHT1998**
 
-🎉 Thank you for reviewing this project!
+🎉 Thank you for reviewing my project!
