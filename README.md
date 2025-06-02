@@ -176,12 +176,13 @@ xeno-crm/                          # Root directory
 
 ```json
 {
-  _id: "ObjectId",
-  name: "String",
-  rules: [{ field: String, operator: String, value: Any }],
-  logic: "AND" || "OR",
-  userId: "ObjectId"
+  "_id": "ObjectId",
+  "name": "String",
+  "rules": [{ "field": String, "operator": String, "value": Any }],
+  "logic": "AND" | "OR",
+  "userId": "ObjectId"
 }
+
 ```
 
 ### 🔹 Campaigns
@@ -228,8 +229,8 @@ Tests are not yet implemented but are crucial for reliability. Recommended tools
 
 | Part     | Platform | URL                                                                            |
 | -------- | -------- | ------------------------------------------------------------------------------ |
-| Frontend | Vercel   | https://xeno-crm-bbishts-projects.vercel.app/app                                                     |
-| Backend  | Render   | https://xeno-crm-backend.onrender.com                                          |
+| Frontend | Vercel   | https://xeno-crm-bbishts-projects.vercel.app                                                  |
+| Backend  | Render   | https://xeno-crm-backend-534j.onrender.com                                         |
 | Database | MongoDB  | MongoDB Atlas                                                                   |
 
 > Vercel provides seamless deployment for React frontend. 
