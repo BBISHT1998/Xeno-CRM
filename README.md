@@ -71,7 +71,9 @@ Ensure you have the following tools and accounts installed and set up:
 
 🔹MongoDB Atlas Account: For hosting your NoSQL cloud database.
 
-🔹Google Cloud Console Project: To generate GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET for OAuth2   authentication.### 📦 Clone the Repository
+🔹Google Cloud Console Project: To generate GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET for OAuth2   authentication.
+
+### 📦 Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/xeno-crm.git
