@@ -22,7 +22,7 @@ const AddCustomer = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/customers", form, {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/customers`, form, {
         withCredentials: true,
       });
       alert("✅ Customer added successfully!");

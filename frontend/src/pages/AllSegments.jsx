@@ -8,7 +8,7 @@ const AllSegments = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/segments", { withCredentials: true })
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/segments`, { withCredentials: true })
       .then((res) => setSegments(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -16,7 +16,7 @@ const AllSegments = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this segment?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/segments/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/segments/${id}`, {
         withCredentials: true,
       });
       setSegments((prev) => prev.filter((seg) => seg._id !== id));
@@ -33,7 +33,7 @@ const AllSegments = () => {
   const handleEditSave = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/segments/${editingId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/segments/${editingId}`,
         form,
         { withCredentials: true }
       );
@@ -50,7 +50,7 @@ const AllSegments = () => {
 
   return (
     <div className="max-w-3xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-6">📋 All Segments</h2>
+      <h2 className="text-2xl font-bold mb-6"> All Segments</h2>
       <ul className="space-y-4">
         {segments.map((seg) => (
           <li

@@ -11,7 +11,7 @@ const CampaignForm = () => {
   useEffect(() => {
     const fetchSegments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/segments", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/segments`, {
           withCredentials: true,
         });
         setSegments(res.data);
@@ -26,7 +26,7 @@ const CampaignForm = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:5000/api/campaigns/launch",
+        `${import.meta.env.VITE_BACKEND_URL}/api/campaigns/launch`,
         {
           segmentId: selectedSegment,
           message,

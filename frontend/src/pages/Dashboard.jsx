@@ -16,9 +16,9 @@ const Dashboard = () => {
     const fetchStats = async () => {
       try {
         const [segRes, campRes, custRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/segments", { withCredentials: true }),
-          axios.get("http://localhost:5000/api/campaigns/history", { withCredentials: true }),
-          axios.get("http://localhost:5000/api/customers", { withCredentials: true }),
+          axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/segments`, { withCredentials: true }),
+          axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/campaigns/history`, { withCredentials: true }),
+          axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/customers`, { withCredentials: true }),
         ]);
 
         setStats({

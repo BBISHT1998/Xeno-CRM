@@ -14,7 +14,7 @@ const SegmentBuilder = () => {
     try {
       setLoading(true);
       setRules([]);
-      const res = await axios.post("http://localhost:5000/api/ai/rules", { prompt });
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/ai/rules`, { prompt });
       setRules(res.data.rules);
     } catch (err) {
       alert("Error generating rules: " + err.message);
@@ -26,7 +26,7 @@ const SegmentBuilder = () => {
   const handleSaveSegment = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/segments",
+       `${import.meta.env.VITE_BACKEND_URL}/api/segments`,
         { name, rules, logic },
         { withCredentials: true }
       );
@@ -40,7 +40,7 @@ const SegmentBuilder = () => {
   const handlePreview = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/segments/preview",
+        `${import.meta.env.VITE_BACKEND_URL}/api/segments/preview`,
         { rules, logic },
         { withCredentials: true }
       );

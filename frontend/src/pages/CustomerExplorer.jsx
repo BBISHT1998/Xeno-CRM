@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // 🔁 Import Link for routing
+import { Link } from "react-router-dom"; //  Import Link for routing
 
 const CustomerExplorer = () => {
   const [customers, setCustomers] = useState([]);
@@ -8,7 +8,7 @@ const CustomerExplorer = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/customers", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/customers`, {
           withCredentials: true,
         });
         setCustomers(res.data);

@@ -12,7 +12,7 @@ const CampaignHistory = () => {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/campaigns/history", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/campaigns/history`, {
           withCredentials: true
         });
         setCampaigns(res.data);
@@ -50,7 +50,7 @@ const CampaignHistory = () => {
 
   return (
     <div className="max-w-5xl mx-auto mt-10 px-4">
-      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">📈 Campaign History</h2>
+      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800"> Campaign History</h2>
 
       {chartData && (
         <div className="mb-10 bg-white p-6 rounded shadow">
