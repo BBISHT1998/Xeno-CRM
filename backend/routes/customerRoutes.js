@@ -9,7 +9,7 @@ router.post('/', ensureAuth, addCustomer);
 // Get all customers for the logged-in user
 router.get('/', ensureAuth, async (req, res) => {
   try {
-    const Customer = require('../models/Customer');
+    const Customer = require('../models/Customer.js');
     const customers = await Customer.find({ userId: req.user._id });
     res.json(customers);
   } catch (err) {
