@@ -2,18 +2,21 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+// Login
+router.get('/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+}));
 
+// Callback
 router.get(
   '/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect('http://localhost:5173/dashboard');
+    res.redirect(`${process.env.FRONTEND_URL}/dashboard`);
   }
 );
 
-
-
+// Logout
 router.get('/logout', (req, res) => {
   req.logout(() => {
     req.session.destroy();
@@ -22,6 +25,7 @@ router.get('/logout', (req, res) => {
   });
 });
 
+// Get current logged-in user
 router.get('/current_user', (req, res) => {
   res.send(req.user);
 });
