@@ -8,11 +8,10 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 // Callback
-router.get(
-  '/google/callback',
+router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect(`https://xeno-crm-bbishts-projects.vercel.app/dashboard`);
+    res.redirect('https://xeno-crm-bbishts-projects.vercel.app/dashboard');
   }
 );
 

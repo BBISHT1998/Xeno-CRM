@@ -20,14 +20,18 @@ const aiController = require('./controllers/aiController');
 
 const app = express();
 //app.use(cors());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "https://xeno-crm-bbishts-projects.vercel.app", credentials: true }));
 app.use(express.json());
 
 // ✅ Setup session & passport
 app.use(session({
     secret: 'xeno-secret',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: {
+    sameSite: 'none',
+    secure: true  //
+  }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
