@@ -8,7 +8,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: '${process.env.BASE_URL}/auth/google/callback', // Use template literal for dynamic base URL
+      // CORRECTED: Use backticks (`) for template literal
+      callbackURL: `${process.env.BASE_URL}/auth/google/callback`,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
