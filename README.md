@@ -1,227 +1,274 @@
-Xeno CRM — AI-Powered Customer Relationship Manager
-A full-stack CRM application to manage customers, create AI-generated segments, launch targeted campaigns, and track campaign history — designed for personalization-driven marketing teams. Built using modern MERN stack with Google OAuth and Gemini AI integration.
 
-📑 Table of Contents
-About the Project
-Built With
-Features
-Getting Started
-Prerequisites
-Installation
-Usage
-Project Structure
-Database Schema
-API Endpoints
-Testing
-Deployment
-Contributing
-License
-Contact
-Acknowledgements
+# 🚀 Xeno CRM — AI-Powered Customer Relationship Manager
 
-📖 About the Project
+A full-stack CRM platform that empowers marketing teams to manage customers, build AI-driven segments, launch campaigns, and track performance — built with the MERN stack, Google OAuth, and Gemini AI.
+
+
+
+
+## 📌 Table of Contents
+
+### About the project 
 Xeno CRM is a lightweight, multi-user CRM for marketing teams, enabling efficient customer base management, AI-driven behavioral segmentation, targeted campaign launches, and outcome tracking. It helps businesses understand customers and drive effective engagement.
-🎥 Screenshots
-(You can add screenshots here after deployment — like Dashboard, Segment Builder, Campaign Preview, etc.)
+### 🏗 Built With
+  🔹 Frontend
+• React — Component-based UI library
+• Vite — Fast bundler and dev server
+• Tailwind CSS — Utility-first CSS
+• React Router — SPA routing
+• Axios — HTTP client
+• Recharts — Charting for dashboard analytics
 
-🏗 Built With
-🔹 Frontend
-React - For dynamic, interactive UIs with component-based architecture.
-Vite - Fast development server and optimized build performance.
-Tailwind CSS - Utility-first CSS for rapid UI development and responsive design.
-React Router - Manages single-page application navigation.
-Axios - Promise-based HTTP client for efficient API requests.
-Recharts (for data visualization) - Composable charting library for dashboard analytics.
+ 🔹 Backend
+• Node.js — JavaScript runtime
+• Express.js — Web framework
+• MongoDB Atlas — NoSQL cloud database
+• Mongoose — MongoDB object modeling
+• Passport.js (Google OAuth2) — Authentication middleware
 
-🔹 Backend
-Node.js - JavaScript runtime for scalable, high-performance server-side applications.
-Express.js - Fast, minimalist web framework for Node.js applications.
-MongoDB Atlas - Fully managed, flexible, and scalable NoSQL cloud database.
-Mongoose - MongoDB object modeling tool for Node.js, simplifying data interaction.
-Passport.js (Google OAuth2) - Flexible authentication middleware for secure Google OAuth2 login.
+ 🔹 AI & Deployment
+• Gemini API (Google AI) — AI-powered segmentation
+• Render — Backend deployment
+• Vercel — Frontend deployment
+### ✨ Features
 
-🔹 AI & Deployment
-Gemini API (Google AI) - Powers AI Segment Builder for intelligent customer segmentation.
-Render - Unified cloud platform for backend hosting with automatic deploys.
-Vercel - Frontend deployment platform with instant static deploys.
+🔐 Google Login (Session Support):
+Secure authentication using Google accounts, with persistent login via session-based management.
 
-✨ Features
+👤 Multi-user Customer Management:
+Supports multiple marketing team members managing distinct customer sets while maintaining data isolation.
 
-🔐 Google Login (session support): Secure Google account authentication with session support for quick access and persistent login.
-👤 Multi-user customer management: Enables multiple marketing team members to manage distinct customer bases, ensuring data separation.
-🧠 AI Segment Builder (Gemini API): Leverages Google's Gemini AI to generate intelligent customer segments from descriptive text prompts.
-📬 Smart Segment Campaign Launch: Initiates targeted marketing campaigns directly to AI-generated or manual segments.
-📊 Campaign History: Provides a detailed log of past campaigns for review and analysis.
-📈 Analytics Dashboard: Offers a comprehensive overview of CRM metrics and campaign performance via charts.
-📁 Segment Management (edit/delete): Dedicated page to view, modify, or delete created segments.
-👥 Customer Explorer & Manual Entry: Centralized interface to browse existing customer data and manually add new records.
-🌐 Responsive, Production-Ready UI: Designed with Tailwind CSS for flawless performance across all devices.
+🧠 AI Segment Builder (Gemini API):
+Utilizes Google’s Gemini AI to convert descriptive prompts into intelligent customer segments automatically.
 
-🚀 Getting Started
+📬 Smart Segment Campaign Launch:
+Enables launching targeted campaigns to customers in either AI-generated or manually created segments.
 
-✅ Prerequisites
-Ensure you have installed:
-Node.js v18+: JavaScript runtime for frontend and backend.
-npm: Node Package Manager.
-Git: Version control for cloning repository.
-MongoDB Atlas account: For database hosting and connection string.
-Google Cloud Console project (for OAuth2): To obtain GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET.
+📊 Campaign History:
+Maintains a comprehensive log of all previously launched campaigns for performance review and strategy refinement.
 
-⚙️ Installation
+📈 Analytics Dashboard:
+Visualizes CRM data and campaign performance through interactive charts powered by Recharts.
 
-1. Clone the Repository
-   git clone https://github.com/your-username/xeno-crm.git
-   cd xeno-crm
+📁 Segment Management (Edit/Delete):
+A dedicated interface to view, update, or delete existing segments for streamlined management.
 
-2. Backend Setup
-   cd backend
-   npm install
+👥 Customer Explorer & Manual Entry:
+Allows exploration of customer data and manual addition of new customer records through a responsive UI.
 
-Create a .env file:
+🌐 Responsive, Production-Ready UI:
+Built with Tailwind CSS to ensure seamless user experience across desktop and mobile devices.
+## 🚀 Getting Started
+### ✅ Prerequisites
+
+Ensure you have the following tools and accounts installed and set up:
+
+🔹Node.js v18+: JavaScript runtime for both frontend and backend.
+
+🔹npm: Node Package Manager to handle dependencies.
+
+🔹Git: Version control system for cloning and managing the repository.
+
+🔹MongoDB Atlas Account: For hosting your NoSQL cloud database.
+
+🔹Google Cloud Console Project: To generate GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET for OAuth2   authentication.### 📦 Clone the Repository
+
+```bash
+git clone https://github.com/your-username/xeno-crm.git
+cd xeno-crm
+```
+
+### 🛠️ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create `.env` in `backend/`:
+
+```env
 PORT=5000
 MONGO_URI=your_mongo_uri
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
 
 Start the backend:
-npm run dev
 
-Backend runs on http://localhost:5000. 3. Frontend Setup
+```bash
+npm run dev
+```
+
+Backend runs on `http://localhost:5000`
+
+---
+
+### 💻 Frontend Setup
+
+```bash
 cd ../frontend
 npm install
+```
 
-Create a .env file:
+Create `.env` in `frontend/`:
+
+```env
 VITE_BACKEND_URL=http://localhost:5000
+```
 
 Start the frontend:
+
+```bash
 npm run dev
+```
 
-Frontend runs on http://localhost:5173.
+Frontend runs on `http://localhost:5173`
+## 🚘 Usage
 
-🚘 Usage
-To use Xeno CRM:
-Login with your Google account.
-View Dashboard and Customer Explorer for insights and customer record management.
-Create Segments with AI using text prompts (e.g., "customers who spent over $100 in the last month").
-Preview customers in new segments for accuracy, then save.
-Launch campaigns to selected segments by crafting a message.
-View campaign history for insights into past strategies.
+To use **Xeno CRM**:
 
-🗂 Project Structure
-xeno-crm/
-├── backend/ # Server-side code and API logic
-│ ├── auth/ # Authentication routes and Passport.js setup
-│ ├── controllers/ # Handles requests, interacts with models, sends responses
-│ ├── models/ # MongoDB schemas (Mongoose)
-│ ├── routes/ # API endpoints
-│ ├── middleware/ # Functions before/after route handlers
-│ └── server.js # Main backend entry point
-├── frontend/ # Client-side React application code
-│ ├── public/ # Static assets
-│ ├── src/ # React application source code
-│ │ ├── pages/ # Top-level page components
-│ │ ├── components/ # Reusable UI components
-│ │ └── App.jsx # Main React component
-├── README.md # This documentation file
-└── .gitignore # Untracked files
+1. **Login** with your Google account.
+2. **View** the Dashboard and Customer Explorer for insights and customer record management.
+3. **Create Segments** using AI text prompts (e.g., "customers who spent over $100 in the last month").
+4. **Preview Customers** in new segments to ensure accuracy, then save.
+5. **Launch Campaigns** to selected segments with a crafted message.
+6. **View Campaign History** to analyze previous marketing strategies.
+## 🗂️ Project Structure
 
-🧩 Database Schema
-Xeno CRM uses MongoDB for customer, segment, and campaign data.
-🔹 Customers
+```
+xeno-crm/                          # Root directory
+├── backend/                       # Server-side code and API logic
+│   ├── auth/                      # Authentication routes and Passport.js setup
+│   ├── controllers/               # Handles requests, interacts with models, sends responses
+│   ├── models/                    # MongoDB schemas (Mongoose)
+│   ├── routes/                    # API endpoints
+│   ├── middleware/                # Functions before/after route handlers
+│   └── server.js                  # Main backend entry point
+├── frontend/                      # Client-side React application code
+│   ├── public/                    # Static assets
+│   └── src/                       # React application source code
+│       ├── pages/                 # Top-level page components
+│       ├── components/            # Reusable UI components
+│       └── App.jsx                # Main React component
+├── README.md                      # This documentation file
+└── .gitignore                     # Untracked files
+```
+## 🧩 Database Schema
+
+### 🔹 Customers
+
+```json
 {
-"\_id": "ObjectId", // Unique identifier
-"name": "String", // Full name
-"email": "String", // Email address (unique)
-"totalSpend": "Number", // Total amount spent
-"visits": "Number", // Number of visits
-"lastActive": "Date", // Last activity timestamp
-"userId": "ObjectId (ref → Google user)" // Owning Google user ID
+  "_id": "ObjectId",
+  "name": "String",
+  "email": "String",
+  "totalSpend": "Number",
+  "visits": "Number",
+  "lastActive": "Date",
+  "userId": "ObjectId"
 }
+```
 
-🔹 Segments
+### 🔹 Segments
+
+```json
 {
-"\_id": "ObjectId", // Unique identifier
-"name": "String", // Descriptive segment name
-"rules": "[{ field: String, operator: String, value: Any }]", // Array of conditions
-"logic": "String (\"AND\" | \"OR\")", // Logical operator for rules
-"userId": "ObjectId" // Creator's Google user ID
+  "_id": "ObjectId",
+  "name": "String",
+  "rules": [{ "field": String, "operator": String, "value": Any }],
+  "logic": "AND" | "OR",
+  "userId": "ObjectId"
 }
+```
 
-🔹 Campaigns
+### 🔹 Campaigns
+
+```json
 {
-"\_id": "ObjectId", // Unique identifier
-"segmentId": "ObjectId", // Targeted segment ID
-"message": "String", // Campaign message content
-"sentTo": "[customerId]", // Array of customer IDs who received campaign
-"userId": "ObjectId", // Campaign launcher's Google user ID
-"createdAt": "Date" // Launch timestamp
+  "_id": "ObjectId",
+  "segmentId": "ObjectId",
+  "message": "String",
+  "sentTo": ["customerId"],
+  "userId": "ObjectId",
+  "createdAt": "Date"
 }
+```
+## 🧭 Architecture Flow
 
-📡 API Endpoints
-🔐 Auth
-GET /auth/google – Google OAuth initiation
-GET /auth/google/callback – OAuth redirect handler
-GET /auth/logout – Logout user
-GET /auth/current_user – Check logged-in user
+```
+[Google Login]
+        ↓
+[Create Customers / Orders]
+        ↓
+[Define Segment Rules via UI or AI]
+        ↓
+[Preview Customers in Segment]
+        ↓
+[Launch Campaign to Segment]
+        ↓
+[Message Sent via Dummy Vendor]
+        ↓
+[Vendor hits /delivery-receipt]
+        ↓
+[Update Communication Log & Analytics]
+```
+## 🧪 Testing
 
-👤 Customers
-POST /api/customers – Add customer (auth required)
-GET /api/customers – List customer (auth required)
-
-🧠 Segments
-POST /api/segments – Create new segment
-GET /api/segments – Get all segments
-POST /api/segments/preview – Get customers for rules
-PUT /api/segments/:id – Update segment
-DELETE /api/segments/:id – Delete segment
-
-🚀 Campaigns
-POST /api/campaigns/launch – Launch campaign
-GET /api/campaigns/history – View campaign logs
-
-🧪 Testing
 Tests are not yet implemented but are crucial for reliability. Recommended tools:
-Backend: Jest + Supertest
-Frontend: Vitest or React Testing Library
 
-☁️ Deployment
-Part
-Platform
-URL
-Frontend
-Vercel
-https://xeno-crm.vercel.app
-Backend
-Render
-https://xeno-crm-backend.onrender.com
-Database
-MongoDB
-MongoDB Atlas
+- **Backend**: Jest + Supertest
+- **Frontend**: Vitest or React Testing Library
+## ☁️ Deployment
 
-Vercel provides seamless continuous deployment for the React frontend, while Render offers a robust environment for the Node.js backend. MongoDB Atlas handles the database, providing a managed, scalable, and secure data store.
+| Part     | Platform | URL                                                                            |
+| -------- | -------- | ------------------------------------------------------------------------------ |
+| Frontend | Vercel   | https://xeno-crm-bbishts-projects.vercel.app/app                                                     |
+| Backend  | Render   | https://xeno-crm-backend.onrender.com                                          |
+| Database | MongoDB  | MongoDB Atlas                                                                   |
 
-🤝 Contributing
-Fork the repo
-Create a feature branch: git checkout -b feature/yourFeature
-Commit your changes: git commit -m "Added your feature"
-Push to the branch: git push origin feature/yourFeature
-Open a Pull Request
+> Vercel provides seamless deployment for React frontend. Render hosts the Node.js backend. MongoDB Atlas ensures secure and scalable data handling.
+## 🤝 Contributing
 
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
+1. Fork the repo  
+2. Create a feature branch:  
+   ```bash
+   git checkout -b feature/yourFeature
+   ```
+3. Commit your changes:  
+   ```bash
+   git commit -m "Added your feature"
+   ```
+4. Push to the branch:  
+   ```bash
+   git push origin feature/yourFeature
+   ```
+5. Open a Pull Request
+## 📌 Known Limitations & Assumptions
 
-📬 Contact
-Bhawna — bbhawna3016@gmail.com
-GitHub: @BBISHT1998
-Project: github.com/BBISHT1998/xeno-crm
+- No actual messaging service is integrated (e.g., Twilio or SMTP); delivery is simulated.
+- AI segment builder relies on Gemini API prompt interpretation, which may vary.
+- No role-based access control (RBAC); all authenticated users have the same privileges.
+- Tests are not yet implemented for backend or frontend.
+- User and customer data separation assumes unique Google accounts.
+## 📄 License
 
-🙏 Acknowledgements
-Gemini API by Google
-Vercel
-Render
-MongoDB Atlas
-Passport.js
-React Icons
-Recharts
+Distributed under the **MIT License**. See the `LICENSE` file for more information.
+## 📬 Contact
 
-Created with ❤️ by BBISHT1998
+**Bhawna** — [bbhawna3016@gmail.com](mailto:bbhawna3016@gmail.com)  
+GitHub: [@BBISHT1998](https://github.com/BBISHT1998)  
+Project: [github.com/BBISHT1998/xeno-crm](https://github.com/BBISHT1998/xeno-crm)
+## 🙏 Acknowledgements
+
+- Gemini API by Google  
+- Vercel  
+- Render  
+- MongoDB Atlas  
+- Passport.js  
+- React Icons  
+- Recharts
+
+🛠️ Created with ❤️ by **BBISHT1998**
+
+🎉 Thank you for reviewing this project!
