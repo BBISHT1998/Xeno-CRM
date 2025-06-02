@@ -1,6 +1,6 @@
 const Login = () => {
   const handleLogin = () => {
-    const backendURL = import.meta.env.VITE_BACKEND_URL || "https://xeno-crm-backend-534j.onrender.com/auth/google/callback";
+    const backendURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
     window.location.href = `${backendURL}/auth/google`;
   };
 
