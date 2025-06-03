@@ -23,7 +23,7 @@ const app = express();
 app.use(cors({ origin: "https://xeno-crm-bbishts-projects.vercel.app", credentials: true }));
 app.use(express.json());
 
-
+app.set('trust proxy', 1);
 // ✅ Setup session & passport
 app.use(session({
     secret: 'xeno-secret',
