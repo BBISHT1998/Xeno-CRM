@@ -11,25 +11,26 @@ A full-stack CRM platform that empowers marketing teams to manage customers, bui
 ### About the project 
 Xeno CRM is a lightweight, multi-user CRM for marketing teams, enabling efficient customer base management, AI-driven behavioral segmentation, targeted campaign launches, and outcome tracking. It helps businesses understand customers and drive effective engagement.
 ### 🏗 Built With
-  🔹 Frontend
-• React — Component-based UI library
-• Vite — Fast bundler and dev server
-• Tailwind CSS — Utility-first CSS
-• React Router — SPA routing
-• Axios — HTTP client
-• Recharts — Charting for dashboard analytics
+ 🔹 Frontend  
+- React — Component-based UI library  
+- Vite — Fast bundler and dev server  
+- Tailwind CSS — Utility-first CSS  
+- React Router — SPA routing  
+- Axios — HTTP client  
+- Recharts — Charting for dashboard analytics  
 
- 🔹 Backend
-• Node.js — JavaScript runtime
-• Express.js — Web framework
-• MongoDB Atlas — NoSQL cloud database
-• Mongoose — MongoDB object modeling
-• Passport.js (Google OAuth2) — Authentication middleware
+🔹 Backend  
+- Node.js — JavaScript runtime  
+- Express.js — Web framework  
+- MongoDB Atlas — NoSQL cloud database  
+- Mongoose — MongoDB object modeling  
+- Passport.js (Google OAuth2) — Authentication middleware  
 
- 🔹 AI & Deployment
-• Gemini API (Google AI) — AI-powered segmentation
-• Render — Backend deployment
-• Vercel — Frontend deployment
+🔹 AI & Deployment  
+- Gemini API (Google AI) — AI-powered segmentation  
+- Render — Backend deployment  
+- Vercel — Frontend deployment  
+
 ### ✨ Features
 
 🔐 Google Login (Session Support):
